@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
+  "proxy": "http://localhost:8000",
   "scripts": {
     "start": "nodemon app.js"
   },
@@ -26,5 +27,8 @@
     "nodemon": "^1.19.4",
     "npm": "^6.13.0",
     "uuid": "^3.3.3"
+  },
+  "devDependencies": {
+    "http-proxy-middleware": "^2.0.6"
   }
 }

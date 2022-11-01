@@ -50,7 +50,7 @@ exports.updateContact = (req, res) => {
         })
         .catch(() => {
           res.status(400).json({
-            message: "Somthing was worng ............",
+            message: "  Somthing was worng ............",
           });
         });
     }
