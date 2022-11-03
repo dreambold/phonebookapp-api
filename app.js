@@ -13,7 +13,7 @@ const { createProxyMiddleware } = require("http-proxy-middleware");
 
 const contactRoute = require("./routes/contact");
 
-//DB connection
+// DB connection
 mongoose
   .connect(process.env.DATABASE, {
     useNewUrlParser: true,
@@ -24,23 +24,13 @@ mongoose
     console.log("DB CONNECTED...");
   })
   .catch(() => {
-    console.log("DB GOT OOOPS  {error}_something went wrong");
+    console.log(`DB GOT OOOPS...`);
   });
 
-//Middelewere
+//Middleware
 app.use(bodyParser.json());
 app.use(cookieParser());
-app.use(cors({
-    origin: "http://localhost:8005"
-}));
-
-app.use(
-  "/api",
-  createProxyMiddleware({
-    target: "http://localhost:8005",
-    changeOrigin: true,
-  })
-);
+app.use(cors());
 
 app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");

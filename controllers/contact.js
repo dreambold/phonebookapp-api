@@ -8,6 +8,7 @@ exports.createContact = (req, res) => {
   const contact = new Contact(req.body);
   contact.save((err, contact) => {
     if (err) {
+      console.log(err)
       return res.status(400).json({
         error: "Not able to save contact in Databse...",
       });
@@ -90,7 +91,7 @@ exports.getAllContacts = (req, res) => {
     .exec((err, contacts) => {
       if (err) {
         return res.status(400).json({
-          error: "contacts are not found",
+          error: "Contacts are not found",
         });
       }
       res.json(contacts);
