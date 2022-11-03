@@ -1,1 +1,9 @@
-Node contact apis
+## Requirements
+- Docker
+- Docker-compose
+
+
+## Run  
+```
+docker-compose up -d
+```
